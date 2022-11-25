@@ -1,0 +1,30 @@
+//strcpy函数-字符串拷贝
+#include <stdio.h>
+char* StrCpy(char* scr){
+	char* ch1 = scr;
+	
+	//1.计算src的长度len
+	int len = 0;
+	while(*ch1 != '\0'){
+		++len;
+		++ch1;
+	}
+
+	//2.用malloc申长度为len+1的内存空间
+	char* str = (char*)malloc(sizeof(char)*(len+1));
+	char* ch2 = str;
+	ch1 = scr;
+	
+	//3.将src字符串逐个字符复制到新申请的内存空间
+	for(int i = 0; i<len; i++){
+		*ch2 = *ch1;
+		++ch2;
+		++ch1;
+	}
+	
+	//4.新申请内存空间的最后一位放入'\0'
+	str[len] = '\0';
+	
+	//5.返回新申请的内存空间指针
+	return str;
+}
