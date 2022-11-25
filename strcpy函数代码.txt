@@ -28,3 +28,5 @@ char* StrCpy(char* scr){
 	//5.返回新申请的内存空间指针
 	return str;
 }
+
+//Local edit by B21031603刘雨
